@@ -16,12 +16,12 @@ def open_gate(car_num):
 
 
 def writing_file_pz(parking_zone):
-    with open("parking_zone.txt", "w", encoding="utf-8") as fo:
+    with open(".\\parking_zone.txt", "w", encoding="utf-8") as fo:
         fo.write(str(parking_zone))
 
 
 def writing_file_ap(available_place):
-    with open("available_place.txt", "w", encoding="utf-8") as fo:
+    with open(".\\available_place.txt", "w", encoding="utf-8") as fo:
         fo.write(str(available_place))
 
 
@@ -57,15 +57,15 @@ def out_parking(parking_zone, available_place, parking_price, car_num):
 
 
 if __name__ == "__main__":
-    if os.path.exists("parking_zone.txt"):
-        parking_zone_io = open("parking_zone.txt", "r", encoding="utf-8")
+    if os.path.exists(".\\parking_zone.txt"):
+        parking_zone_io = open(".\\parking_zone.txt", "r", encoding="utf-8")
         parking_zone_str = parking_zone_io.readline()
         parking_zone = ast.literal_eval(parking_zone_str) #
     else:
         parking_zone = {}
     
-    if os.path.exists("available_place.txt"):
-        available_place_io = open("available_place.txt", "r", encoding="utf-8")
+    if os.path.exists(".\\available_place.txt"):
+        available_place_io = open(".\\available_place.txt", "r", encoding="utf-8")
         available_place_str = available_place_io.readline()
         available_place = int(available_place_str)
     else:
